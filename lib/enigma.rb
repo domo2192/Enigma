@@ -22,9 +22,10 @@ class Enigma
     end
   end
 
-  def create_offsets(date)
+  def create_offsets(convert_date)
     hold = []
-    x = (date.to_i)
+    require "pry"; binding.pry
+    x = (convert_date.to_i)
     y = x ** 2
     a = y.to_s[-4..-1]
     a.split('')
@@ -32,6 +33,32 @@ class Enigma
     hold.flatten
   end
 
+  def create_values(arg_1, arg_2)
+    split = split_keys(arg_1)
+    offset = create_offsets(arg_2)
+    combine = [offset, split]
+    combine.transpose.map {|x| x.reduce(:+)}
+  end
+
+  def final_shifts(values)
+    hash = {A:values[0],B:values[1],C:values[2],D:values[3]}
+  end
+
+  def rotate_words(message, shifts)
+    array = []
+  end
+
+  def rotate_letters(message, shifts)
+    a = shifts.first
+    b = shifts[1]
+    c = shifts[2]
+    d = shifts[3]
+    newa = alphabet.zip(alphabet.rotate(a)).to_h
+    newb = alphabet.zip(alphabet.rotate(b)).to_h
+    newc = alphabet.zip(alphabet.rotate(c)).to_h
+    newd = alphabet.zip(alphabet.rotate(d)).to_h
+
+  end
   # def encrypt(message, key = default_key, date = default_date)
   #   {encryption: cipher,
   #               key: key,
