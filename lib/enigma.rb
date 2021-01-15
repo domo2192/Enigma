@@ -23,7 +23,14 @@ class Enigma
   end
 
   def create_offsets(date)
-    
+    hold = []
+    x = (date.to_i)
+    y = x ** 2
+    a = y.to_s[-4..-1]
+    a.split('')
+    hold << a.split('').map(&:to_i)
+    hold.flatten
+  end
 
   # def encrypt(message, key = default_key, date = default_date)
   #   {encryption: cipher,

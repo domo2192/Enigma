@@ -43,7 +43,11 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_offsets
-    assert_equal [1, 0 , 2 , 5], @enigma.create_offsets(040895)
+    assert_equal [1, 0 , 2 , 5], @enigma.create_offsets('040895')
+  end
+
+  def test_merge_offsets_and_split_keys
+    assert_equal 
 
   end
 end
