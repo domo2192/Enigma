@@ -8,8 +8,7 @@ class Rotate
 
   def rotate_words(message, shifts)
     new_word = []
-    message.each_char do |letter|
-      letter.downcase 
+    message.downcase.each_char do |letter|
       if alphabet.include?(letter)
         new_word << rotate_letters(letter, shifts[0])
         shifts.rotate!
