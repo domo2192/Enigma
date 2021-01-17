@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-17T09:26:49-07:00">2021-01-17T09:26:49-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-17T09:56:26-07:00">2021-01-17T09:56:26-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -95,7 +95,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#bafd3767fb22ef25b18b7d35438f0fca1aa7b31e" class="src_link" title="lib/rotate.rb">lib/rotate.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">26</td>
+            <td class="cell--number">27</td>
             <td class="cell--number">15</td>
             <td class="cell--number">15</td>
             <td class="cell--number">0</td>
@@ -1403,111 +1403,12 @@
 
             
 
-            <code class="ruby">    message.each_char do |letter|</code>
+            <code class="ruby">    message.downcase.each_char do |letter|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="12" data-linenumber="12">
-            <span class="hits">12</span>
-            
-
-            
-
-            <code class="ruby">      if alphabet.include?(letter)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="11" data-linenumber="13">
-            <span class="hits">11</span>
-            
-
-            
-
-            <code class="ruby">        new_word &lt;&lt; rotate_letters(letter, shifts[0])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="11" data-linenumber="14">
-            <span class="hits">11</span>
-            
-
-            
-
-            <code class="ruby">        shifts.rotate!</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
-            
-
-            <code class="ruby">      else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      new_word &lt;&lt; letter</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-            
-
-            
-
-            <code class="ruby">      end </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="18">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="19">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    new_word.join</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="20">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="21">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -1518,40 +1419,95 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
+          <li class="covered" data-hits="12" data-linenumber="13">
+            <span class="hits">12</span>
+            
+
+            
+
+            <code class="ruby">      if alphabet.include?(letter)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="11" data-linenumber="14">
+            <span class="hits">11</span>
+            
+
+            
+
+            <code class="ruby">        new_word &lt;&lt; rotate_letters(letter, shifts[0])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="11" data-linenumber="15">
+            <span class="hits">11</span>
+            
+
+            
+
+            <code class="ruby">        shifts.rotate!</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">      else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def rotate_letters(letter, shift)</code>
+            <code class="ruby">      new_word &lt;&lt; letter</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="12" data-linenumber="23">
-            <span class="hits">12</span>
+          <li class="never" data-hits="" data-linenumber="18">
+            
             
 
             
 
-            <code class="ruby">    x = alphabet.zip(alphabet.rotate(shift)).to_h</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="12" data-linenumber="24">
-            <span class="hits">12</span>
+          <li class="never" data-hits="" data-linenumber="19">
+            
             
 
             
 
-            <code class="ruby">    x[letter]</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
+          <li class="covered" data-hits="1" data-linenumber="20">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    new_word.join</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
             
             
 
@@ -1562,7 +1518,62 @@
         </div>
       
         <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def rotate_letters(letter, shift)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="12" data-linenumber="24">
+            <span class="hits">12</span>
+            
+
+            
+
+            <code class="ruby">    x = alphabet.zip(alphabet.rotate(shift)).to_h</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="12" data-linenumber="25">
+            <span class="hits">12</span>
+            
+
+            
+
+            <code class="ruby">    x[letter]</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
             
             
 
