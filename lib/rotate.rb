@@ -9,12 +9,13 @@ class Rotate
   def rotate_words(message, shifts)
     new_word = []
     message.each_char do |letter|
+      letter.downcase 
       if alphabet.include?(letter)
         new_word << rotate_letters(letter, shifts[0])
         shifts.rotate!
       else
       new_word << letter
-      end 
+      end
     end
     new_word.join
   end
