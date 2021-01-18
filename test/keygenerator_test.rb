@@ -19,8 +19,13 @@ class KeyGeneratorTest < Minitest::Test
   end
 
   def test_dates_can_be_converted
-    Date.stubs(:today).returns("011521")
+    Date.stubs(:today).returns(Date.new(2021, 1, 15))
     assert_equal "011521", @generate_key.convert_date
+  end
+
+  def test_generate_key_stubs
+    @generate_key.stubs(:key_numbers).returns(2715)
+    assert_equal 2715, @generate_key.key_numbers 
   end
 
   def test_keys_can_be_generated
