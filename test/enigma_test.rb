@@ -16,29 +16,40 @@ class EnigmaTest < Minitest::Test
     assert_instance_of KeyGenerator, @key_generator
   end
 
+  def test_generate_key_stubs
+    @enigma.stubs(:key_numbers).returns(2715)
+    assert_equal 2715, @enigma.key_numbers
+  end
+
+  def test_dates_can_be_converted
+    Date.stubs(:today).returns(Date.new(2021, 1, 15))
+    assert_equal "011521", @enigma.convert_date
+  end
+
   def test_encrypt_is_hash_taking_three_arguements
     expected = {encryption: 'keder ohulw!',
                 key: '02715',
                 date: '040895'}
-    assert_equal expected, @enigma.encrypt('Hello World!', '02715', '04/08/95')
+    assert_equal expected, @enigma.encrypt('hello world!', '02715', '04/08/95')
   end
 
-  def test_default_date
-    expected = {encryption: "pefaw qdzly!",
+  def test_todays_date
+    @enigma.stubs(:convert_date).returns('040895')
+    expected = {encryption: 'keder ohulw!',
                 key: '02715',
-                date: '011821'}
-  assert_equal expected, @enigma.encrypt('Hello World!', '02715')
+                date: '040895'}
+    assert_equal expected, @enigma.encrypt("hello world!", "02715")
   end
 
-  def test_default_keys
-    @key_generator = mock
-    @key_generator.stubs(:key_numbers).returns('02715')
-    @key_generator.stubs(:convert_date).returns('011821')
-    expected = {encryption: "pefaw qdzly!",
-                key: '02715',
-                date: '011821'}
 
-    assert_equal expected, @enigma.encrypt('Hello World!')
+  def test_default_keys_date
+    @enigma.stubs(:key_numbers).returns('02715')
+    @enigma.stubs(:convert_date).returns('040895')
+    expected = {encryption: "keder ohulw!",
+                key: '02715',
+                date: '040895'}
+
+    assert_equal expected, @enigma.encrypt('hello world!')
   end
 
   def test_decrypt
