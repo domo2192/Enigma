@@ -11,11 +11,14 @@ class KeyGeneratorTest < Minitest::Test
   end
 
   def test_it_exits
+    assert_instance_of Enigma, @enigma
     assert_instance_of KeyGenerator, @generate_key
   end
 
   def test_alphabet_contains_27_chars
-    assert_equal 27, @generate_key.alphabet.length
+    expected = [] << ("a".."z") << " "
+    assert_instance_of Array, ("a".."z").to_a
+    assert_equal expected, @generate_key.alphabet
   end
 
   def test_dates_can_be_converted
@@ -25,7 +28,7 @@ class KeyGeneratorTest < Minitest::Test
 
   def test_generate_key_stubs
     @generate_key.stubs(:key_numbers).returns(2715)
-    assert_equal 2715, @generate_key.key_numbers 
+    assert_equal 2715, @generate_key.key_numbers
   end
 
   def test_keys_can_be_generated
