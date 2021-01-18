@@ -22,6 +22,7 @@ class KeyGeneratorTest < Minitest::Test
   end
 
   def test_alphabet_contains_27_chars
+    assert_instance_of Array, @rotate.alphabet
     assert_equal 27, @rotate.alphabet.length
   end
 
