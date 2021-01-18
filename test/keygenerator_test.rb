@@ -35,16 +35,6 @@ class KeyGeneratorTest < Minitest::Test
     assert_equal [02 , 27, 71, 15], @generate_key.split_keys('02715')
   end
 
-  # def test_encrypt_is_hash_taking_three_arguements
-  #   cipher = mock
-  #   key = mock
-  #   date = mock
-  #   expected = {encryption: cipher,
-  #               key: key,
-  #               date: date}
-  #   assert_equal expected, generate_key.encrypt('akjakj jfj')
-  # end
-
   def test_offsets
     assert_equal [1, 0 , 2 , 5], @generate_key.create_offsets('040895')
   end
