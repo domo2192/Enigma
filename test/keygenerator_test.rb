@@ -21,24 +21,6 @@ class KeyGeneratorTest < Minitest::Test
     assert_equal expected, @generate_key.alphabet
   end
 
-  def test_dates_can_be_converted
-    Date.stubs(:today).returns(Date.new(2021, 1, 15))
-    assert_equal "011521", @generate_key.convert_date
-  end
-
-  def test_generate_key_stubs
-    @generate_key.stubs(:key_numbers).returns(2715)
-    assert_equal 2715, @generate_key.key_numbers
-  end
-
-  def test_keys_can_be_generated
-    numbers = (0..9).to_a
-      @generate_key.key_numbers.split("").each do |number|
-    assert_includes numbers, number.to_i
-    end
-
-  end
-
   def test_split_digits_to_key
     assert_equal [02 , 27, 71, 15], @generate_key.split_keys('02715')
   end
