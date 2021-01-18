@@ -24,7 +24,6 @@ class KeyGenerator
 
   def create_offsets(convert_date)
     hold = []
-    require "pry"; binding.pry
     x = (convert_date.to_i)
     y = x ** 2
     a = y.to_s[-4..-1]
@@ -40,8 +39,8 @@ class KeyGenerator
     combine.transpose.map {|x| x.reduce(:+)}
   end
 
-  def final_shifts(values)
-    hash = {A:values[0],B:values[1],C:values[2],D:values[3]}
+  def final_shifts(create_values)
+    hash = {A:create_values[0],B:create_values[1],C:create_values[2],D:create_values[3]}
   end
 
 end
