@@ -16,4 +16,13 @@ class Enigma < Rotate
            date: date}
   end
 
+  def decrypt(message, key = @key_generator.key_numbers, date = @key_generator.convert_date)
+    date = (date.delete('/'))
+    shifts = @key_generator.create_values(key, date)
+    negative = shifts.map(&:-@)
+    { decryption: rotate_words(message, negative),
+            key: key,
+           date: date}
+  end
+
 end
