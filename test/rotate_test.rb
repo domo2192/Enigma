@@ -28,6 +28,6 @@ class KeyGeneratorTest < Minitest::Test
 
   def test_it_can_rotate_words
     expected = 'keder ohulw!'
-    assert_equal expected, @rotate.rotate_words('HeLlo World!', [3, 27, 73, 20])
+    assert_equal expected, @rotate.rotate_words('hello world!', [3, 27, 73, 20])
   end
 end
