@@ -19,7 +19,7 @@ class KeyGeneratorTest < Minitest::Test
   end
 
   def test_dates_can_be_converted
-
+    Date.stubs(:today).returns("011521")
     assert_equal "011521", @generate_key.convert_date
   end
 
@@ -32,7 +32,7 @@ class KeyGeneratorTest < Minitest::Test
   end
 
   def test_split_digits_to_key
-    assert_equal [02 , 27, 71, 15], @generate_key.split_keys('040895')
+    assert_equal [02 , 27, 71, 15], @generate_key.split_keys('02715')
   end
 
   # def test_encrypt_is_hash_taking_three_arguements
