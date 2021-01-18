@@ -1,6 +1,28 @@
 {
   "Unit Tests": {
     "coverage": {
+      "/Users/dominicpadula/turing/Mod1/projects/enigma_project/lib/enigma.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/dominicpadula/turing/Mod1/projects/enigma_project/lib/keygenerator.rb": {
         "lines": [
           1,
@@ -22,26 +44,26 @@
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          4,
           null,
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          5,
           null,
           null,
           1,
@@ -51,32 +73,37 @@
           null
         ]
       },
-      "/Users/dominicpadula/turing/Mod1/projects/enigma_project/lib/enigma.rb": {
+      "/Users/dominicpadula/turing/Mod1/projects/enigma_project/lib/rotate.rb": {
         "lines": [
           1,
           1,
           null,
           null,
           1,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          34,
           null,
           null,
+          1,
+          1,
+          1,
+          12,
+          11,
+          11,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          11,
+          11,
           null,
           null
         ]
       }
     },
-    "timestamp": 1610982430
+    "timestamp": 1610987809
   }
 }
