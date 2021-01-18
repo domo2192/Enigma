@@ -22,9 +22,9 @@ class KeyGenerator
     end
   end
 
-  def create_offsets(convert_date)
+  def create_offsets(arg_1)
     hold = []
-    x = (convert_date.to_i)
+    x = (arg_1.to_i)
     y = x ** 2
     a = y.to_s[-4..-1]
     a.split('')
