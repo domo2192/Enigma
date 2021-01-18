@@ -1,18 +1,19 @@
-require './lib/enigma'
+require './lib/keygenerator'
+require './lib/rotate'
+require 'date'
 
-message = File.read(ARGV[0], 'r')
-text = message.read
-message.close
+class Enigma < Rotate
+  def initialize
+    @key_generator = KeyGenerator.new
+  end
 
-enigma = Enigma.new
 
-encoded = enigma.encrypt(text.chomp)
-encrpted_file = File.open(ARGV[1], 'w')
-encrpted_file.write(encoded[:encrption])
-encrpted_file.close
-puts "Created #{ARGV[1]} with the key #{encoded[:key]} and the date #{encoded[:date]} "
-def encrypt(message, key = default_key, date = convert_date)
-  {encryption: cipher,
-          key: key,
-         date: date}
+  def encrypt(message, key = @key_generator.key_numbers, date = @key_generator.convert_date)
+    date = (date.delete('/'))
+    shifts = @key_generator.create_values(key, date)
+    { encryption: rotate_words(message, shifts),
+            key: key,
+           date: date}
+  end
+
 end
