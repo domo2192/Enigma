@@ -3,7 +3,7 @@ require './lib/enigma'
 message = File.read(ARGV[0])
 
 enigma = Enigma.new
-encoded = enigma.encrypt(message.downcase)
+encoded = enigma.encrypt(message.downcase, ARGV[2], ARGV[3])
 
 encrypted_file = File.open(ARGV[1], 'w').write(encoded[:encryption])
 
