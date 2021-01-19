@@ -17,6 +17,7 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_generate_key_stubs
+    @enigma.stubs(:rand).returns(2715)
     @enigma.stubs(:key_numbers).returns(2715)
     assert_equal 2715, @enigma.key_numbers
   end
@@ -43,6 +44,7 @@ class EnigmaTest < Minitest::Test
 
 
   def test_default_keys_date
+    @enigma.stubs(:rand).returns(2715)
     @enigma.stubs(:key_numbers).returns('02715')
     @enigma.stubs(:convert_date).returns('040895')
     expected = {encryption: "keder ohulw!",
