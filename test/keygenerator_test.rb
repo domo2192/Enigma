@@ -16,9 +16,9 @@ class KeyGeneratorTest < Minitest::Test
   end
 
   def test_alphabet_contains_27_chars
-    expected = [] << ("a".."z") << " "
+
     assert_instance_of Array, ("a".."z").to_a
-    assert_equal expected, @generate_key.alphabet
+    assert_equal 27, @generate_key.alphabet.length
   end
 
   def test_split_digits_to_key
@@ -30,6 +30,8 @@ class KeyGeneratorTest < Minitest::Test
   end
 
   def create_values
+    @generate_key.stubs(:split_keys).returns([02 , 27, 71, 15])
+    @generate_key.stubs(:create_offsets).returns([1, 0 , 2 , 5])
     assert_equal [3, 27, 73, 20], @generate_key.create_values('02715', '040895')
 
   end
