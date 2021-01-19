@@ -1,9 +1,8 @@
 class Rotate
-  def initialize
-  end
+  def initialize; end
 
   def alphabet
-    ("a".."z").to_a << " "
+    ('a'..'z').to_a << ' '
   end
 
   def rotate_words(message, shifts)
@@ -13,7 +12,7 @@ class Rotate
         new_word << rotate_letters(letter, shifts[0])
         shifts.rotate!
       else
-      new_word << letter
+        new_word << letter
       end
     end
     new_word.join

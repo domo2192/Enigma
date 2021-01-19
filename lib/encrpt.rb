@@ -2,7 +2,6 @@ require './lib/enigma'
 
 message = File.read(ARGV[0])
 
-
 enigma = Enigma.new
 encoded = enigma.encrypt(message.downcase)
 
