@@ -3,9 +3,7 @@ require './lib/keygenerator'
 require './lib/enigma'
 require './lib/rotate'
 
-
 class KeyGeneratorTest < Minitest::Test
-
   def setup
     @generate_key = KeyGenerator.new
     @enigma = Enigma.new
@@ -14,11 +12,10 @@ class KeyGeneratorTest < Minitest::Test
 
   def test_it_exists
     assert_instance_of Rotate, @rotate
-
   end
 
   def test_it_can_rotate_letters
-    assert_equal 'k', @rotate.rotate_letters("h", 3)
+    assert_equal 'k', @rotate.rotate_letters('h', 3)
   end
 
   def test_alphabet_contains_27_chars
