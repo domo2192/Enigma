@@ -19,7 +19,7 @@ class Rotate
   end
 
   def rotate_letters(letter, shift)
-    x = alphabet.zip(alphabet.rotate(shift)).to_h
-    x[letter]
+    rotate_hash =  alphabet.zip(alphabet.rotate(shift)).to_h
+    rotate_hash[letter]
   end
 end
