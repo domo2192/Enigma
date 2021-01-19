@@ -14,11 +14,8 @@ class KeyGenerator
 
   def create_offsets(arg_1)
     hold = []
-    x = (arg_1.to_i)
-    y = x ** 2
-    a = y.to_s[-4..-1]
-    a.split('')
-    hold << a.split('').map(&:to_i)
+    x = ((arg_1.to_i) ** 2).to_s[-4..-1].to_s[-4..-1].split('')
+    hold << x.map(&:to_i)
     hold.flatten
   end
 
