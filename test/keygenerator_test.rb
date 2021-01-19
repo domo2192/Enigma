@@ -26,8 +26,8 @@ class KeyGeneratorTest < Minitest::Test
     assert_equal [1, 0, 2, 5], @generate_key.create_offsets('040895')
   end
 
-  def create_values
-    @generate_key.stubs(:split_keys).returns([0o2, 27, 71, 15])
+  def test_create_values
+    @generate_key.stubs(:split_keys).returns([2, 27, 71, 15])
     @generate_key.stubs(:create_offsets).returns([1, 0, 2, 5])
     assert_equal [3, 27, 73, 20], @generate_key.create_values('02715', '040895')
   end
